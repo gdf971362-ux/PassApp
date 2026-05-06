@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Получаем мастер-пароль из предыдущего экрана
         masterPassword = intent.getStringExtra("MASTER_PASSWORD") ?: ""
         
         storage = Storage(this)
@@ -30,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         val rvPasswords = findViewById<RecyclerView>(R.id.rvPasswords)
         val fabAdd = findViewById<FloatingActionButton>(R.id.fabAdd)
 
-        // Настраиваем список
         adapter = PasswordAdapter(emptyList()) { serviceName ->
             showDeleteConfirmation(serviceName)
         }

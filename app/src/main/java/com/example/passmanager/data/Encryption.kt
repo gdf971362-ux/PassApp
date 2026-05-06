@@ -5,13 +5,9 @@ import javax.crypto.Cipher
 import javax.crypto.spec.SecretKeySpec
 import java.security.MessageDigest
 
-/**
- * Этот объект превращает ваш текст в шифр и обратно, используя ваш Мастер-Пароль.
- */
 object Encryption {
     private const val ALGORITHM = "AES"
 
-    // Создаем надежный ключ из вашего обычного пароля
     private fun generateKey(password: String): SecretKeySpec {
         val digest = MessageDigest.getInstance("SHA-256")
         val bytes = password.toByteArray()

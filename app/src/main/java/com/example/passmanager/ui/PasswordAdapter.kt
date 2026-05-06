@@ -31,7 +31,6 @@ class PasswordAdapter(
         holder.tvLogin.text = "Логин: ${item.login}"
         holder.tvPassword.text = "Пароль: ${item.password}"
         
-        // Долгое нажатие для удаления
         holder.itemView.setOnLongClickListener {
             onDeleteClick(item.serviceName)
             true
